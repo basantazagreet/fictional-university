@@ -3,18 +3,13 @@
   get_header();
 
   while(have_posts()) {
-    the_post(); ?>
+    the_post(); 
     
-    <!-- For Page banner -->
-    <div class="page-banner">
-    <div class="page-banner__bg-image" style="background-image: url(<?php echo get_theme_file_uri('/images/ocean.jpg') ?>);"></div>
-    <div class="page-banner__content container container--narrow">
-      <h1 class="page-banner__title"><?php the_title(); ?></h1>
-      <div class="page-banner__intro">
-        <p>DONT FORGET TO REPLACE ME LATER</p>
-      </div>
-    </div>  
-  </div>
+    //for page banner provide args
+    pageBanner(array(
+            'title' =>"About our university",
+            'subtitle' => 'Best University in the world.',
+        )); ?>
 
   <div class="container container--narrow page-section">
     

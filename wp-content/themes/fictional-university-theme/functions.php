@@ -74,3 +74,42 @@ function change_query_program_for_asc ($query){
 }
 
 add_action('pre_get_posts', 'change_query_program_for_asc');
+
+
+
+
+function pageBanner($args = NULL){
+  //IF args not provided in array, use the title and ACF subtitle
+  if(!$args['title']){
+    $args['title'] = get_the_title();
+  }
+  if(!$args['subtitle']){
+    $args['subtitle'] = get_field('page_banner_subtitle');
+  }
+  //If args photo not provided, get through ACF and still not provided fall back to ocean.jpg
+  if(!$args['photo']){
+    if(get_field('page_banner_background_image')){
+      $args['photo'] = get_field('page_banner_background_image')['sizes']['pageBanner'];
+      }else{
+      $args['photo'] = get_theme_file_uri('/images/ocean.jpg');
+      }
+      }
+
+?>  
+<div class="page-banner">
+        <div class="page-banner__bg-image"
+            style="background-image: url(<?php echo $args['photo']; ?>);"></div>
+        <div class="page-banner__content container container--narrow">
+            <h1 class="page-banner__title">
+                <?php echo $args['title']; ?>
+            </h1>
+            <div class="page-banner__intro">
+                <p><?php echo $args['subtitle'];?></p>
+            </div>
+        </div>
+    </div>
+ <?php }
+        
+  
+
+
