@@ -10,3 +10,9 @@ Create pages: About us- Our Goals, Our History
               
  Add some posts
  Import ACF Json file
+ 
+ 
+ 
+ ACF Fields>
+ 
+ 1)liked_professor_id number post type is equal to like
