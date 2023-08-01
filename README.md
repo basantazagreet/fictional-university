@@ -1,5 +1,5 @@
 # fictional-university
-Learn Wordpress coding by using this repository. This is a udemy course by Brad Schiff.
+Learn Wordpress coding by using this repository.
 
 Instructions:
 Create pages: About us- Our Goals, Our History
